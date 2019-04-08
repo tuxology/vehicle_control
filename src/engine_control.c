@@ -1,22 +1,30 @@
 #include <stdio.h>
 #include <string.h>
 #include "engine.h"
+#include "bus.h"
 
 typedef unsigned int UINT;
 
-char* get_ecu_command(int bus_comm) {
-    switch (bus_comm)
-    {
-        case ENGINE_OFF:
-            return "SET_ENG_OFF";
-            break;
+char* get_ecu_command(int bus_comm, int control_bus) {
 
-        case ENGINE_ON:
-            return "SET_ENG_ON";
-            break;
-    
-        default:
-            break;
+    if (control_bus == ECU) {
+        switch (bus_comm)
+        {
+            case ENGINE_OFF:
+                return "SET_ENG_OFF";
+                break;
+
+            case ENGINE_ON:
+                return "SET_ENG_ON";
+                break;
+        
+            default:
+                break;
+        }
+    }
+
+    else {
+        return "SET_ENGINE_OFF";
     }
 }
 

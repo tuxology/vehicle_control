@@ -9,7 +9,7 @@ enum comm {
     ENGINE_OFF = 2,
 };
 
-char* get_ecu_command(int);
+char* get_ecu_command(int, int);
 void maintenance_mode(char*);
 void submit_ecu_command(char[], char*);
 
