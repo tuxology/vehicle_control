@@ -20,7 +20,7 @@ char* get_ecu_command(int bus_comm) {
     }
 }
 
-void maintainence_mode(char* aux_buf) {
+void maintenance_mode(char* aux_buf) {
     // Run command set in aux mode which is unverified
 }
 
@@ -32,8 +32,8 @@ void submit_ecu_command(char buff[12], char* aux_buff) {
             // run engine shutdown routine
         }
         else {
-            if (MAINTAINENCE) {
-                maintainence_mode(aux_buff);
+            if (MAINTENANCE) {
+                maintenance_mode(aux_buff);
             }
         }
 }

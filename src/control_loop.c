@@ -3,7 +3,7 @@
 #include "engine.h"
 
 // A debug binary is accidentally compiled which releases
-// maintainence code
+// maintenance code
 
 int main(void) {
 
@@ -20,7 +20,7 @@ int main(void) {
     memcpy(command_buff, buff, 12);
 
     // Maintenance mode check
-    if (MAINTAINENCE) {
+    if (MAINTENANCE) {
         // Example input. In real cases, it could come from the IVI System
         gets(aux_command);
     }
